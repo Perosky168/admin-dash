@@ -9,7 +9,7 @@ h1 {
     padding-left: 2%;
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
     .MainDash {
         justify-content: flex-start;
         margin-top: 2rem;
@@ -20,4 +20,4 @@ h1 {
     .MainDash {
         align-items: center;
     }
-}
+} */

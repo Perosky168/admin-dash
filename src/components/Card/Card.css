@@ -1,7 +1,7 @@
 .CompactCard {
     display: flex;
     flex: 1;
-    height: 7rem;
+    height: 9rem;
     border-radius: 0.7rem !important;
     color: white;
     position: relative;
@@ -41,7 +41,7 @@
 }
 
 .radialBar>span {
-    font-size: 17px;
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -55,7 +55,7 @@
 
 .detail>span:nth-child(1) {
     padding-top: 30%;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
 }
 

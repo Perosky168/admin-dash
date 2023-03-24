@@ -43,7 +43,7 @@ export default function BasicTable() {
                 setUser(response.data.data.data)
                 console.log(users)
             } catch (error) {
-                console.log('this is error')
+                console.log('this is error');
             }
         };
         fetchData();
@@ -52,39 +52,40 @@ export default function BasicTable() {
     return (
         <div className="Table">
             <h3>Visitors</h3>
-            <TableContainer
-                component={Paper}
-                style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
-            >
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Name</TableCell>
-                            <TableCell align="left">Email</TableCell>
-                            <TableCell align="left">Date</TableCell>
-                            <TableCell align="left">Status</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody style={{ color: "white" }}>
-                        {users.map((row) => (
-                            <TableRow
-                                key={row.id}
-                                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                            >
-                                <TableCell component="th" scope="row">
-                                    {row.name}
-                                </TableCell>
-                                <TableCell align="left">{row.email}</TableCell>
-                                <TableCell align="left">{row.date}</TableCell>
-                                <TableCell align="left">
-                                    <span className="status" style={makeStyle(row.status)}>{row.status}</span>
-                                </TableCell>
-                                {/* <TableCell align="left" className="Details">Details</TableCell> */}
+            <div style={{ height: "350px", overflow: "auto" }}>
+                <TableContainer
+                    component={Paper}
+                    style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
+                >
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Name</TableCell>
+                                <TableCell align="left">Email</TableCell>
+                                <TableCell align="left">Date</TableCell>
+                                <TableCell align="left">Status</TableCell>
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+                        </TableHead>
+                        <TableBody style={{ color: "white" }}>
+                            {users.map((row) => (
+                                <TableRow
+                                    key={row.id}
+                                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                                >
+                                    <TableCell component="th" scope="row">
+                                        {row.name}
+                                    </TableCell>
+                                    <TableCell align="left">{row.email}</TableCell>
+                                    <TableCell align="left">{row.date}</TableCell>
+                                    <TableCell align="left">
+                                        <span className="status" style={makeStyle(row.status)}>{row.status}</span>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </div>
         </div>
     );
 }

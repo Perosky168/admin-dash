@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './login.css';
 
-const Login = () => {
+const Login = ({ onLogin }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const history = useNavigate();
+    const navigatTo = useNavigate();
 
     const handleEmailChange = (e) => setEmail(e.target.value);
     const handlePasswordChange = (e) => setPassword(e.target.value);
@@ -16,14 +17,15 @@ const Login = () => {
             const response = await axios.post('https://mavenfleet.herokuapp.com/api/v1/admin/login', { email, password });
             const { token } = response.data;
             localStorage.setItem('token', token);
-            history('/admin-dashboard');
+            onLogin();
+            navigatTo('/admin-dashboard');
         } catch (error) {
             console.log(error);
         }
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="card" >
             <label>
                 Email:
                 <input type="email" value={email} onChange={handleEmailChange} />

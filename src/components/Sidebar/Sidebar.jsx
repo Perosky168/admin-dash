@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import Logo from "../../assets/images/mavenlogo.png";
+import Logo from "../../assets/images/Admin-Logo.png";
 import './Sidebar.css';
 
 import { SidebarData } from "../../Data/Data";
 import { UilSignOutAlt } from "@iconscout/react-unicons";
+
+
 const Sidebar = () => {
 
     const [selected, setSelected] = useState(0)
@@ -14,9 +16,6 @@ const Sidebar = () => {
             {/* logo */}
             <div className="logo">
                 <img src={Logo} alt="" />
-                <span>
-                    mav<span>ee</span>n
-                </span>
             </div>
 
             {/* menu */}
@@ -34,6 +33,10 @@ const Sidebar = () => {
                         </div>
                     )
                 })}
+
+                {/* <button onClick={ } className="menuItem">
+                    <UilSignOutAlt />
+                </button> */}
 
                 <div className="menuItem">
                     <UilSignOutAlt />
